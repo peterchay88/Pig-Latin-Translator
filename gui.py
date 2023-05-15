@@ -61,4 +61,4 @@ translated_text.place(x=15, y=125)
 
 application_window.mainloop()
 
-# test
+# test one
