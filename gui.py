@@ -60,3 +60,5 @@ translated_text = tk.Text(application_window,width=40, height=3)
 translated_text.place(x=15, y=125)
 
 application_window.mainloop()
+
+# test
