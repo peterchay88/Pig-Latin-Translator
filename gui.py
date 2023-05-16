@@ -33,33 +33,37 @@ def get_text():
     translated_text.insert(tk.END, pig_latin_sentence)
 
 
+def clear_text():
+    translated_text.delete("1.0", tk.END)
+    text_field.delete("1.0", tk.END)
+
+
 # creating the window for the GUI
 application_window = tk.Tk()
 application_window.title("Pig Latin Translator")
-application_window.geometry("320x200")
+application_window.geometry("600x100")
 
 # creating the label for the GUI
 label = tk.Label(application_window, text="What would you like to translate?")
-label.pack()
+label.place(x=10, y=1)
 
 label2 = tk.Label(application_window, text="Translated Text:")
-label2.place(x=15, y=105)
+label2.place(x=300, y=1)
 
 # creating a text field for the user to input what needs to be translated
 text_field = tk.Text(application_window, width=40, height=3)
-text_field.pack()
+text_field.place(x=10, y=20)
 
 # creating buttons for the GUI
 translate_button = tk.Button(application_window, text="Translate", padx=15, command=get_text)
-translate_button.place(x=16, y=70)
+translate_button.place(x=362, y=64)
 
-clear_button = tk.Button(application_window, text="Clear", padx=20)
-clear_button.place(x=140, y=70)
+clear_button = tk.Button(application_window, text="Clear", padx=20, command=clear_text)
+clear_button.place(x=482, y=64)
 
 # Creating the text field where the translated text will appear
 translated_text = tk.Text(application_window, width=40, height=3)
-translated_text.place(x=15, y=125)
+translated_text.place(x=300, y=20)
 
 application_window.mainloop()
 
-# test one two
