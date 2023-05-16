@@ -32,6 +32,7 @@ def get_text():
     translated_text.delete("1.0", tk.END)
     translated_text.insert(tk.END, pig_latin_sentence)
 
+
 # creating the window for the GUI
 application_window = tk.Tk()
 application_window.title("Pig Latin Translator")
@@ -56,7 +57,7 @@ clear_button = tk.Button(application_window, text="Clear", padx=20)
 clear_button.place(x=140, y=70)
 
 # Creating the text field where the translated text will appear
-translated_text = tk.Text(application_window,width=40, height=3)
+translated_text = tk.Text(application_window, width=40, height=3)
 translated_text.place(x=15, y=125)
 
 application_window.mainloop()
