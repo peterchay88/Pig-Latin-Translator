@@ -35,3 +35,5 @@ elif user_input[0].upper() not in vowels and user_input[1].upper() not in vowels
 # Checks to see if the first letter is a vowel
 elif user_input[0].upper() in vowels:
     print(f"{user_input.title()}w{suffix}")
+
+# This is a test
