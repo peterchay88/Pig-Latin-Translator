@@ -38,5 +38,5 @@ if translate_button:
 
     pig_latin_sentence = " ".join(translated_sentence)
     st.session_state['text'] = pig_latin_sentence
-    st.experimental_rerun()
+    st.rerun()
 
