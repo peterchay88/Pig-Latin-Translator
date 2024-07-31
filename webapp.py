@@ -1,5 +1,6 @@
 import streamlit as st
-import functions
+from pig_latin import PigLatin
+
 
 # Define session States
 if "text" not in st.session_state:
@@ -34,11 +35,11 @@ if translate_button:
         translated_text_area = st.code(st.session_state['text'], language="markdown")
     for words in user_input.split():
         if words[0].upper() not in vowels and words[1].upper() in vowels:
-            translated_word = functions.first_consonant_second_vowel(words)
+            translated_word = PigLatin().first_consonant_second_vowel(words)
             translated_sentence.append(translated_word)
         # Checks to see if the first letter is a consonant and the second letter is a vowel
         elif words[0].upper() not in vowels and words[1].upper() not in vowels:
-            translated_word = functions.double_consonants(words)
+            translated_word = PigLatin().double_consonants(words)
             translated_sentence.append(translated_word)
         # Checks to see if the first letter is a vowel
         elif words[0].upper() in vowels:

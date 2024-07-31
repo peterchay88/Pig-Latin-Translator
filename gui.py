@@ -1,5 +1,5 @@
 import tkinter as tk
-import functions
+import pig_latin
 
 vowels = ["A", "E", "I", "O", "U"]
 suffix = "ay"
