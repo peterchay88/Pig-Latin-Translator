@@ -5,15 +5,15 @@ class PigLatin:
         self.vowels = ["A", "E", "I", "O", "U"]
         self.sentence = sentence
 
-    def first_consonant_second_vowel(self):
+    def first_consonant_second_vowel(self, word):
         translated_words = []
-        english_words = self.sentence.split(" ")
-        for english_word in english_words:
-            english_word = list(english_word)
-            first_letter = english_word[0]
-            english_word.pop(0)
-            english_word.append(first_letter)
-            translated_word = "".join(english_word)
+        letters = word.split(" ")
+        for letter in letters:
+            letter = list(letter)
+            first_letter = letter[0]
+            letter.pop(0)
+            letter.append(first_letter)
+            translated_word = "".join(letter)
             translated_words.append(translated_word)
         pig_latin_sentence = " ".join(translated_words)
         return f"{pig_latin_sentence}{self.suffix}"
