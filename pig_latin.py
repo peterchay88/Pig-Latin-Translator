@@ -30,7 +30,7 @@ class PigLatin:
 
     def translate_sentence(self):
         translated_sentence = []
-        for words in self.sentence:
+        for words in self.sentence.split():
             if words[0].upper() not in self.vowels and words[1].upper() in self.vowels:
                 translated_word = self.first_consonant_second_vowel()
                 translated_sentence.append(translated_word)
