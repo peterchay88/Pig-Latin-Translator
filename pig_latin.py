@@ -7,8 +7,7 @@ class PigLatin:
 
     def first_consonant_second_vowel(self, word):
         translated_words = []
-        letters = word.split(" ")
-        for letter in letters:
+        for letter in word.split():
             letter = list(letter)
             first_letter = letter[0]
             letter.pop(0)
@@ -32,7 +31,7 @@ class PigLatin:
         translated_sentence = []
         for words in self.sentence.split():
             if words[0].upper() not in self.vowels and words[1].upper() in self.vowels:
-                translated_word = self.first_consonant_second_vowel()
+                translated_word = self.first_consonant_second_vowel(words)
                 translated_sentence.append(translated_word)
             # Checks to see if the first letter is a consonant and the second letter is a vowel
             elif words[0].upper() not in self.vowels and words[1].upper() not in self.vowels:
