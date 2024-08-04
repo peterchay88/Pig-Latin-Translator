@@ -1,5 +1,5 @@
 import streamlit as st
-from pig_latin import PigLatin
+from pig_latin.pig_latin import PigLatin
 
 
 # Define session States
