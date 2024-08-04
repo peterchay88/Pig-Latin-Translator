@@ -32,16 +32,19 @@ class PigLatin:
         translated_word = "".join(word_being_translated)
         return f"{translated_word}{self.__suffix}"
 
-    def translate_sentence(self):
+    def translate_sentence(self) -> str:
+        """
+        This method takes in the sentence initialized with the object and calls the correct method for translating each
+        word to translate it to pig latin
+        :return: Translated sentence
+        """
         translated_sentence = []
         for words in self.sentence.split():
             if words[0].upper() not in self.__vowels and words[1].upper() in self.__vowels:
-                translated_word = self.first_consonant_second_vowel(words)
-                translated_sentence.append(translated_word)
+                translated_sentence.append(self.first_consonant_second_vowel(words))
             # Checks to see if the first letter is a consonant and the second letter is a vowel
             elif words[0].upper() not in self.__vowels and words[1].upper() not in self.__vowels:
-                translated_word = self.double_consonants(words)
-                translated_sentence.append(translated_word)
+                translated_sentence.append(self.double_consonants(words))
             # Checks to see if the first letter is a vowel
             elif words[0].upper() in self.__vowels:
                 translated_sentence.append(f"{words}w{self.__suffix}")
