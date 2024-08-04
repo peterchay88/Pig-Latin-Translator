@@ -24,11 +24,6 @@ with button_col[1]:
 # Translated text area
 translated_text_area = st.text_area("", st.session_state['text'],  placeholder="Translation")
 
-
-# translated_sentence = []
-# vowels = ["A", "E", "I", "O", "U"]
-# suffix = "ay"
-
 if translate_button:
     # Trying to get the st.code box to show after clicking the button but rerun() at the bottom refreshes the page
     # rerun is needed in order for the piglatin translator to work. Need to debug it.
@@ -36,20 +31,6 @@ if translate_button:
     if st.session_state['show_translate_text']:
         translated_text_area = st.code(st.session_state['text'], language="markdown")
     pig_latin_sentence = pig_latin.translate_sentence()
-
-    # for words in user_input.split():
-    #     if words[0].upper() not in vowels and words[1].upper() in vowels:
-    #         translated_word = PigLatin().first_consonant_second_vowel(words)
-    #         translated_sentence.append(translated_word)
-    #     # Checks to see if the first letter is a consonant and the second letter is a vowel
-    #     elif words[0].upper() not in vowels and words[1].upper() not in vowels:
-    #         translated_word = PigLatin().double_consonants(words)
-    #         translated_sentence.append(translated_word)
-    #     # Checks to see if the first letter is a vowel
-    #     elif words[0].upper() in vowels:
-    #         translated_sentence.append(f"{words}w{suffix}")
-    #
-    #     translated_sentence[0] = translated_sentence[0].title()
 
     st.session_state['text'] = pig_latin_sentence
     st.rerun()
