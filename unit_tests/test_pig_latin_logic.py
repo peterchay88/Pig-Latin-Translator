@@ -42,6 +42,21 @@ class TestPigLatin:
         assert pl.double_consonants(word) == expected_result, \
             f"Error unexpected result. Expected: {expected_result}. Actual: {pl.double_consonants(word)}"
 
+    @pytest.mark.parametrize("word, expected_result", [
+        pytest.param("battery", "atterybay"),
+        pytest.param("man", "anmay"),
+        pytest.param("gemini", "eminigay"),
+        pytest.param("network", "etworknay")
+    ])
+    def test_first_letter_consonant_second_letter_vowel(self, word, expected_result):
+        """
+        This test confirms that words that start with a consonant and second letter is a vowel  are translated properly
+        :return:
+        """
+        pl = PigLatin("")
+        assert pl.first_consonant_second_vowel(word) == expected_result, \
+            f"Error unexpected result. Expected: {expected_result}. Actual: {pl.first_consonant_second_vowel(word)}"
+
     def test_sentence_with_numbers(self):
         """
         This test confirms when we send a sentence of with strings and numbers it is handled as expected.
