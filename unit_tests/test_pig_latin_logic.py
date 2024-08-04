@@ -5,6 +5,9 @@ from pig_latin import PigLatin
 class TestPigLatin:
 
     @pytest.mark.parametrize("sentence, expected_result", [
+        pytest.param("brick", "Ickbray"),
+        pytest.param("mango", "Angomay"),
+        pytest.param("umbrella", "Umbrellaway"),
         pytest.param("Peter is awesome", "Eterpay isway awesomeway"),
         pytest.param("Pig latin is fun", "Igpay atinlay isway unfay"),
         pytest.param("The curious cat watched the raindrops race down the windowpane",
@@ -13,7 +16,7 @@ class TestPigLatin:
                      "Ethay oldengay etrieverray eagerlyway asedchay ethay ouncingbay ennistay allbay acrossway ethay "
                      "unnysay arkpay")
     ])
-    def test_sentence_string_only(self, sentence, expected_result):
+    def test_translate_sentence_string_only(self, sentence, expected_result):
         """
         This test confirms when we send sentence of only strings through the pig latin translator code
         we get the expected return.
@@ -23,6 +26,21 @@ class TestPigLatin:
         assert pl.translate_sentence() == expected_result, \
             f"Error unexpected result. Expected: {expected_result}. Actual: {pl.translate_sentence()}"
         pass
+
+    @pytest.mark.parametrize("word, expected_result", [
+        pytest.param("brick", "ickbray"),
+        pytest.param("clock", "ockclay"),
+        pytest.param("flamethrower", "amethrowerflay"),
+        pytest.param("draftbeer", "aftbeerdray")
+    ])
+    def test_double_consonants(self, word, expected_result):
+        """
+        This test confirms that words that start with two consonants are translated properly
+        :return:
+        """
+        pl = PigLatin("")
+        assert pl.double_consonants(word) == expected_result, \
+            f"Error unexpected result. Expected: {expected_result}. Actual: {pl.double_consonants(word)}"
 
     def test_sentence_with_numbers(self):
         """
