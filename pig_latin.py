@@ -5,26 +5,31 @@ class PigLatin:
     def __init__(self, sentence):
         self.sentence = sentence
 
-    def first_consonant_second_vowel(self, word):
-        translated_words = []
-        for letter in word.split():
-            letter = list(letter)
-            first_letter = letter[0]
-            letter.pop(0)
-            letter.append(first_letter)
-            translated_word = "".join(letter)
-            translated_words.append(translated_word)
-        pig_latin_sentence = " ".join(translated_words)
-        return f"{pig_latin_sentence}{self.__suffix}"
+    def first_consonant_second_vowel(self, word: str) -> str:
+        """
+        This method translates words that have the first letter consonant and second letter vowel into pig latin
+        :param word: Word to be translated into pig latin
+        :return: Translated word
+        """
+        english_word = [letter for letter in word]
+        first_letter = english_word[0]
+        english_word.pop(0)
+        english_word.append(first_letter)
+        translated_word = "".join(english_word)
+        return f"{translated_word}{self.__suffix}"
 
-    def double_consonants(self):
-        english_word = list(self.sentence)
+    def double_consonants(self, word: str) -> str:
+        """
+        This method translated words that start with two consonants into pig latin
+        :param word: Word to be translated into pig latin
+        :return: Translated word
+        """
+        english_word = [letter for letter in word]
         first_letter = english_word[0]
         second_letter = english_word[1]
-        english_word.pop(0)
-        english_word.pop(0)
-        english_word.extend([first_letter, second_letter])
-        translated_word = "".join(english_word)
+        word_being_translated = english_word[2:]
+        word_being_translated.extend([first_letter, second_letter])
+        translated_word = "".join(word_being_translated)
         return f"{translated_word}{self.__suffix}"
 
     def translate_sentence(self):
@@ -35,7 +40,7 @@ class PigLatin:
                 translated_sentence.append(translated_word)
             # Checks to see if the first letter is a consonant and the second letter is a vowel
             elif words[0].upper() not in self.__vowels and words[1].upper() not in self.__vowels:
-                translated_word = self.double_consonants()
+                translated_word = self.double_consonants(words)
                 translated_sentence.append(translated_word)
             # Checks to see if the first letter is a vowel
             elif words[0].upper() in self.__vowels:
