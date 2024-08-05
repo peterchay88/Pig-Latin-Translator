@@ -12,7 +12,10 @@ pig_latin = PigLatin(user_input_field)
 # Translate Button
 button_col = st.columns([16, 2.6])
 with button_col[1]:
-    translate_button = st.button("Translate", on_click=translate, key="Translate")
+    if st.session_state['translate']:
+        translate_button = st.button("Translate", on_click=translate, key="translate")
+    elif st.session_state['clear']:
+        clear_button = st.button("Clear", key="clear")
 
 # Translated text area, if translate button is clicked show field and run translate sentence method
 if st.session_state['show_translate_text']:
