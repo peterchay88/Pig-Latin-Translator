@@ -6,6 +6,10 @@ project as a whole is still in progress.
 #### Prerequisites
 - Python 3.11.4 (or higher)
 - [Streamlit]("https://streamlit.io/")
+- Pytest (For Unit Testing)
+```commandline
+pip install requirements.txt
+```
 
 This project comes in three different flavors! 
 - Command Line Interface
@@ -22,7 +26,7 @@ streamlit run webapp.py
 
 ### Unit Testing
 This Project also contains unit tests to confirm the underlying logic is working correctly
-while I am continuing to improve the application. 
+while I am continuing to improve the application.
 
 The unit tests are built using the `pytest` module.
 
