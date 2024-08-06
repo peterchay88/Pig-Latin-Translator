@@ -27,3 +27,5 @@ if st.session_state['show_translate_text']:
     translated_text_area = st.code(pig_latin.translate_sentence(), language="markdown")
 if st.session_state['error']:
     st.error("Error! Please enter something to translate.")
+
+st.write("This app was built by [Peter Chay.](%s)" % "https://github.com/peterchay88")
