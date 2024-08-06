@@ -1,5 +1,15 @@
 import streamlit as st
 
+# Define session States
+if 'show_translate_text' not in st.session_state:
+    st.session_state['show_translate_text'] = False
+if 'translate' not in st.session_state:
+    st.session_state['translate'] = True
+if 'clear' not in st.session_state:
+    st.session_state['clear'] = False
+if 'error' not in st.session_state:
+    st.session_state['error'] = False
+
 
 def translate():
     """
