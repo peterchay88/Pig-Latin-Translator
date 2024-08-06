@@ -1,6 +1,8 @@
 import streamlit as st
 from pig_latin.pig_latin import PigLatin
-from web_page_logic.web_page_logic import translate, clear
+from web_page_logic.web_page_logic import translate, clear, define_session_states
+
+define_session_states()
 
 # Title
 st.title("Pig Latin Translator :pig:")
@@ -25,4 +27,3 @@ if st.session_state['show_translate_text']:
     translated_text_area = st.code(pig_latin.translate_sentence(), language="markdown")
 if st.session_state['error']:
     st.error("Error! Please enter something to translate.")
-
