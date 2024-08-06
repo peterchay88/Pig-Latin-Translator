@@ -1,6 +1,6 @@
 import streamlit as st
 from pig_latin.pig_latin import PigLatin
-from web_page_logic.web_page_logic import translate
+from web_page_logic.web_page_logic import translate, clear
 
 # Title
 st.title("Pig Latin Translator :pig:")
@@ -18,7 +18,7 @@ if st.session_state['translate']:
 elif st.session_state['clear']:
     button_col = st.columns([20, 2.2])
     with button_col[1]:
-        clear_button = st.button("Clear")
+        clear_button = st.button("Clear", on_click=clear)
 
 # Translated text area, if translate button is clicked show field and run translate sentence method
 if st.session_state['show_translate_text']:
