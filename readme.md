@@ -3,6 +3,7 @@
 This web app is designed to translate any english words or sentences into pig latin! Please keep in mind that this 
 project as a whole is still in progress. 
 
+The web app was built using Python and the Streamlit library. You can access the web app [here!](https://piglatintranslator.streamlit.app/)
 
 #### Prerequisites
 - Python 3.11.4 (or higher)
