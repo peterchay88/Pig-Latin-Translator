@@ -3,9 +3,12 @@
 This web app is designed to translate any english words or sentences into pig latin! Please keep in mind that this 
 project as a whole is still in progress. 
 
+The Pig latin translator web app was built using Python and the streamlit module. The web app is hosted
+via streamlit and can be found [here!](https://peterspiglatintranslator.streamlit.app/)
+
 #### Prerequisites
 - Python 3.11.4 (or higher)
-- [Streamlit]("https://streamlit.io/")
+- [Streamlit]("https://streamlit.io/") (For Web app)
 - Pytest (For Unit Testing)
 ```commandline
 pip install requirements.txt
@@ -18,7 +21,7 @@ This project comes in three different flavors!
 
 In order to run the GUI or CMD app please run the `gui.py` or `command_line_interface.py` scripts. 
 
-### How to run web app
+### How to run web app on your local machine
 In your terminal run 
 ```commandline
 streamlit run webapp.py
@@ -37,3 +40,4 @@ The unit tests are built using the `pytest` module.
   - Reverse translator 
   - ETC.
 - Fix Gui App
+- Web app tests using Selenium 
