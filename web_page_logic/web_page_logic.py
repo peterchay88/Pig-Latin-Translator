@@ -1,3 +1,5 @@
+import time
+
 import streamlit as st
 
 # Define session States
@@ -16,6 +18,8 @@ def translate():
     st.session_state['show_translate_text'] = True
     st.session_state['translate'] = False
     st.session_state['clear'] = True
+    st.balloons()
+    st.toast("Sentence Translated!", icon="🔥")
 
 
 def clear():
@@ -27,3 +31,4 @@ def clear():
     st.session_state['translate'] = True
     st.session_state['clear'] = False
     st.session_state['text'] = ""
+    st.toast("Translation Cleared!", icon="🫡")

@@ -24,3 +24,4 @@ elif st.session_state['clear']:
 if st.session_state['show_translate_text']:
     translated_text_area = st.code(pig_latin.translate_sentence(), language="markdown")
 
+
