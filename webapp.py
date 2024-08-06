@@ -5,7 +5,7 @@ from web_page_logic.web_page_logic import translate, clear, define_session_state
 define_session_states()
 
 # Title
-st.title("Pig Latin Translator :pig:")
+st.title("Pig Latin Translator :pig: (ALPHA)")
 
 # User input box & initialize the pig latin class
 user_input_field = st.text_area("What would you like to translate?", placeholder="Enter Text Here", key="text")
