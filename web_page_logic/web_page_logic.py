@@ -1,5 +1,3 @@
-import time
-
 import streamlit as st
 
 # Define session States
