@@ -1,6 +1,8 @@
 import streamlit as st
 from pig_latin.pig_latin import PigLatin
-from web_page_logic.web_page_logic import translate, clear
+from web_page_logic.web_page_logic import translate, clear, define_session_states
+
+define_session_states()
 
 # Title
 st.title("Pig Latin Translator :pig:")
