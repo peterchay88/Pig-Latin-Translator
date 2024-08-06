@@ -10,17 +10,17 @@ user_input_field = st.text_area("What would you like to translate?", placeholder
 pig_latin = PigLatin(user_input_field)
 
 # Translate Button
-button_col = st.columns([16, 2.6])
-with button_col[1]:
-    if st.session_state['translate']:
-        translate_button = st.button("Translate", on_click=translate, key="translate")
-    elif st.session_state['clear']:
-        clear_button = st.button("Clear", key="clear")
+if st.session_state['translate']:
+    button_col = st.columns([16, 2.6])
+    with button_col[1]:
+        translate_button = st.button("Translate", on_click=translate)
+# Clear button
+elif st.session_state['clear']:
+    button_col = st.columns([20, 2.2])
+    with button_col[1]:
+        clear_button = st.button("Clear")
 
 # Translated text area, if translate button is clicked show field and run translate sentence method
 if st.session_state['show_translate_text']:
     translated_text_area = st.code(pig_latin.translate_sentence(), language="markdown")
-
-
-
 
