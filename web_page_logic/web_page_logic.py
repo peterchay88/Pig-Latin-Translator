@@ -1,11 +1,5 @@
 import streamlit as st
 
-# Define session States
-st.session_state['show_translate_text'] = False
-st.session_state['translate'] = True
-st.session_state['clear'] = False
-st.session_state['error'] = False
-
 
 def translate():
     """
