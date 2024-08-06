@@ -6,6 +6,7 @@ import streamlit as st
 st.session_state['show_translate_text'] = False
 st.session_state['translate'] = True
 st.session_state['clear'] = False
+st.session_state['error'] = False
 
 
 def translate():
@@ -15,11 +16,15 @@ def translate():
     :return:
     """
     # Show translated text field:
-    st.session_state['show_translate_text'] = True
-    st.session_state['translate'] = False
-    st.session_state['clear'] = True
-    st.balloons()
-    st.toast("Sentence Translated!", icon="🔥")
+    if st.session_state['text'] != "":
+        st.session_state['show_translate_text'] = True
+        st.session_state['translate'] = False
+        st.session_state['clear'] = True
+        st.balloons()
+        st.toast("Sentence Translated!", icon="🔥")
+        st.session_state['error'] = False
+    elif st.session_state['text'] == "":
+        st.session_state['error'] = True
 
 
 def clear():

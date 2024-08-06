@@ -23,5 +23,6 @@ elif st.session_state['clear']:
 # Translated text area, if translate button is clicked show field and run translate sentence method
 if st.session_state['show_translate_text']:
     translated_text_area = st.code(pig_latin.translate_sentence(), language="markdown")
-
+if st.session_state['error']:
+    st.error("Error! Please enter something to translate.")
 
