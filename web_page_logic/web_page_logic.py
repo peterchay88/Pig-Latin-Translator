@@ -44,3 +44,20 @@ def clear():
     st.session_state['clear'] = False
     st.session_state['text'] = ""
     st.toast("Translation Cleared!", icon="🫡")
+
+
+def footer(text: str, version: float):
+    """
+    Footer for the web page
+    :param text: Footer text
+    :param version: app version
+    :return:
+    """
+    i = 0
+    while True:
+        if i < 12:
+            st.write("\n")
+            i += 1
+        elif i >= 12:
+            break
+    st.write(f"{text} Version {version}.")
