@@ -1,6 +1,7 @@
 import streamlit as st
 from pig_latin.pig_latin import PigLatin
-from web_page_logic.web_page_logic import translate, clear, define_session_states, footer
+from web_page_logic.web_page_logic import translate, clear, define_session_states
+from web_page_logic.footer import footer
 
 define_session_states()
 
@@ -28,5 +29,4 @@ if st.session_state['show_translate_text']:
 if st.session_state['error']:
     st.error("Error! Please enter something to translate.")
 
-footer(text="This app was built by [Peter Chay.](%s)" % "https://github.com/peterchay88",
-       version=1.0)
+footer()
