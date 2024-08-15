@@ -40,7 +40,9 @@ class PigLatin:
         """
         translated_sentence = []
         for words in self.sentence.split():
-            if words[0].upper() not in self.__vowels and words[1].upper() in self.__vowels:
+            if len(words) == 1:
+                translated_sentence.append(words + "ay")
+            elif words[0].upper() not in self.__vowels and words[1].upper() in self.__vowels:
                 translated_sentence.append(self.first_consonant_second_vowel(words))
             # Checks to see if the first letter is a consonant and the second letter is a vowel
             elif words[0].upper() not in self.__vowels and words[1].upper() not in self.__vowels:
