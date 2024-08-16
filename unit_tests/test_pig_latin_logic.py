@@ -25,7 +25,6 @@ class TestPigLatin:
         pl = PigLatin(sentence)
         assert pl.translate_sentence() == expected_result, \
             f"Error unexpected result. Expected: {expected_result}. Actual: {pl.translate_sentence()}"
-        pass
 
     @pytest.mark.parametrize("word, expected_result", [
         pytest.param("brick", "ickbray"),
@@ -56,6 +55,23 @@ class TestPigLatin:
         pl = PigLatin("")
         assert pl.first_consonant_second_vowel(word) == expected_result, \
             f"Error unexpected result. Expected: {expected_result}. Actual: {pl.first_consonant_second_vowel(word)}"
+
+    @pytest.mark.parametrize("sentence, expected_result", [
+        pytest.param("i", "Iyay"),
+        pytest.param("a", "Ayay"),
+        pytest.param("z", "Z"),
+        pytest.param("g", "G"),
+        pytest.param("I am hungry", "Iyay amway ungryhay"),
+        pytest.param("I have a new phone", "Iyay avehay ayay ewnay onephay")
+    ])
+    def test_sentence_with_single_letters(self, sentence, expected_result):
+        """
+        This test confirms that we are able to send a sentence with single letters, and it is handled as expected.
+        :return:
+        """
+        pl = PigLatin(sentence)
+        assert pl.translate_sentence() == expected_result, \
+            f"Error unexpected result. Expected: {expected_result}. Actual: {pl.translate_sentence()}"
 
     def test_sentence_with_numbers(self):
         """

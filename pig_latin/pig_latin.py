@@ -2,7 +2,7 @@ class PigLatin:
     __suffix = "ay"
     __vowels = ["A", "E", "I", "O", "U"]
 
-    def __init__(self, sentence):
+    def __init__(self, sentence: str):
         self.sentence = sentence
 
     def first_consonant_second_vowel(self, word: str) -> str:
@@ -41,7 +41,10 @@ class PigLatin:
         translated_sentence = []
         for words in self.sentence.split():
             if len(words) == 1:
-                translated_sentence.append(words + "ay")
+                if words.lower() == 'a' or words.lower() == 'i':
+                    translated_sentence.append(words + "yay")
+                else:
+                    translated_sentence.append(words)
             elif words[0].upper() not in self.__vowels and words[1].upper() in self.__vowels:
                 translated_sentence.append(self.first_consonant_second_vowel(words))
             # Checks to see if the first letter is a consonant and the second letter is a vowel
