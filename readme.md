@@ -1,4 +1,4 @@
-# Pig Latin Translator (WIP)
+# Pig Latin Translator
 
 This web app is designed to translate any english words or sentences into pig latin! Please keep in mind that this 
 project as a whole is still in progress. 
@@ -15,7 +15,7 @@ pip install requirements.txt
 
 This project comes in three different flavors! 
 - Command Line Interface
-- GUI Interface (Currently broken need to fix)
+- GUI Interface (Currently not working)
 - Web App
 
 In order to run the GUI or CMD app please run the `gui.py` or `command_line_interface.py` scripts. 
